@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KLM Virtual Airline — GeoFS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Leaflet CSS for route map -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzDLHi8Wg0B2C2R6F1o7QPQvCk="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/KLM_logo.svg" alt="KLM VA" class="logo" />
+        <span class="brand-text">KLM Virtual — GeoFS</span>
+      </div>
+      <nav class="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#routes">Routes</a>
+        <a href="#events">Events</a>
+        <a href="#pilot">Pilot center</a>
+        <a href="#join" class="btn">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <h1>Fly the Dutch way in GeoFS</h1>
+      <p>Join KLM Virtual for structured schedules, immersive events, and professional flight ops—open to all skill levels.</p>
+      <div class="cta">
+        <a href="#join" class="btn btn-primary">Apply as pilot</a>
+        <a href="#routes" class="btn btn-secondary">Explore routes</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About our virtual airline</h2>
+      <div class="grid two">
+        <div>
+          <p>We simulate KLM operations in GeoFS: real-world-inspired routes, fleet discipline, and events that balance realism and fun. Our focus: safety, airmanship, and community.</p>
+          <ul class="bullets">
+            <li><strong>Ops style:</strong> SID/STAR when practical, hand-flown visuals encouraged</li>
+            <li><strong>ATC:</strong> Structured phraseology during events, flexible in casual flights</li>
+            <li><strong>PIREP:</strong> Simple flight reports with screenshots/logs</li>
+            <li><strong>Community:</strong> Discord-based briefings, mentoring, and crew rooms</li>
+          </ul>
+        </div>
+        <div class="card info">
+          <h3>Resources</h3>
+          <ul class="links">
+            <li><strong>Discord:</strong> <a href="#" id="discordLink">Invite</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section id="fleet" class="section">
+  <div class="container">
+    <h2>KLM Virtual Fleet</h2>
+    <p>Our GeoFS fleet mirrors KLM’s real-world operations. Below are the types we operate:</p>
+    <div class="grid three">
+
+      <!-- Airbus A320neo -->
+      <div class="card">
+        <h3>Airbus A320neo</h3>
+        <p><strong>Units:</strong> 9 (part of group order)</p>
+        <p><strong>Seats:</strong> 180</p>
+        <p><strong>Notes:</strong> Replacing Boeing 737NG. Shared order with Transavia subsidiaries.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Airbus_A320-271N_NEO_D-AVVA.jpg" 
+             alt="Airbus A320neo" 
+             style="width:50%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px" />
+      </div>
+
+      <!-- Airbus A321neo -->
+      <div class="card">
+        <h3>Airbus A321neo</h3>
+        <p><strong>Units:</strong> 33 (expected)</p>
+        <p><strong>Seats:</strong> 191–227</p>
+        <p><strong>Notes:</strong> Largest narrowbody in the fleet.</p>
+      </div>
+
+      <!-- Airbus A330-200 -->
+      <div class="card">
+        <h3>Airbus A330-200</h3>
+        <p><strong>Units:</strong> 6</p>
+        <p><strong>Seats:</strong> 210–264</p>
+        <p><strong>Notes:</strong> To be retired and replaced by A350.</p>
+      </div>
+
+      <!-- Airbus A330-300 -->
+      <div class="card">
+        <h3>Airbus A330-300</h3>
+        <p><strong>Units:</strong> 5</p>
+        <p><strong>Seats:</strong> 222–292</p>
+      </div>
+
+      <!-- Airbus A350-900 -->
+      <div class="card">
+        <h3>Airbus A350-900</h3>
+        <p><strong>Units:</strong> 47 (on order)</p>
+        <p><strong>Seats:</strong> 238–331</p>
+        <p><strong>Notes:</strong> Replacing A330 and 777-200ER.</p>
+      </div>
+
+      <!-- Airbus A350-1000 -->
+      <div class="card">
+        <h3>Airbus A350-1000</h3>
+        <p><strong>Units:</strong> 3 (on order)</p>
+        <p><strong>Seats:</strong> 297–391</p>
+      </div>
+
+      <!-- Boeing 737-700 -->
+      <div class="card">
+        <h3>Boeing 737-700</h3>
+        <p><strong>Units:</strong> 6</p>
+        <p><strong>Seats:</strong> 106–132</p>
+        <p><strong>Notes:</strong> To be retired and replaced by A320neo family.</p>
+      </div>
+
+      <!-- Boeing 737-800 -->
+      <div class="card">
+        <h3>Boeing 737-800</h3>
+        <p><strong>Units:</strong> 31</p>
+        <p><strong>Seats:</strong> 150–176</p>
+      </div>
+
+      <!-- Boeing 737-900 -->
+      <div class="card">
+        <h3>Boeing 737-900</h3>
+        <p><strong>Units:</strong> 5</p>
+        <p><strong>Seats:</strong> 132–182</p>
+      </div>
+
+      <!-- Boeing 777-200ER -->
+      <div class="card">
+        <h3>Boeing 777-200ER</h3>
+        <p><strong>Units:</strong> 15</p>
+        <p><strong>Seats:</strong> 175–288</p>
+        <p><strong>Notes:</strong> To be retired and replaced by A350.</p>
+      </div>
+
+      <!-- Boeing 777-300ER -->
+      <div class="card">
+        <h3>Boeing 777-300ER</h3>
+        <p><strong>Units:</strong> 16</p>
+        <p><strong>Seats:</strong> 266–381</p>
+      </div>
+
+      <!-- Boeing 787-9 -->
+      <div class="card">
+        <h3>Boeing 787-9</h3>
+        <p><strong>Units:</strong> 13</p>
+        <p><strong>Seats:</strong> 176–275</p>
+      </div>
+
+      <!-- Boeing 787-10 -->
+      <div class="card">
+        <h3>Boeing 787-10</h3>
+        <p><strong>Units:</strong> (current fleet)</p>
+        <p><strong>Seats:</strong> ~330</p>
+      </div>
+       <!-- Embraer 175 -->
+      <div class="card">
+        <h3>Embraer 175</h3>
+        <p><strong>Units:</strong> 17</p>
+        <p><strong>Seats:</strong> 88</p>
+      </div>
+      <!-- Embraer 190 -->
+      <div class="card">
+        <h3>Embraer 190</h3>
+        <p><strong>Units:</strong> 22</p>
+        <p><strong>Seats:</strong> 100</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section id="events" class="section alt">
+    <div class="container">
+      <h2>Events</h2>
+      <p>From calm dawn hops to heavy-bank holiday shuttles—our calendar mixes training and showcase flights.</p>
+      <div id="eventGrid" class="grid two"></div>
+    </div>
+  </section>
+
+  <section id="pilot" class="section">
+    <div class="container">
+      <h2>Pilot center</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Login</h3>
+          <form id="loginForm">
+            <label>
+              <span>Callsign</span>
+              <input type="text" id="callsign" placeholder="KLM###" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" id="password" placeholder="••••••••" required />
+            </label>
+            <button type="submit" class="btn btn-primary">Log in</button>
+            <p class="muted">Demo only—no data stored.</p>
+          </form>
+          <div id="loginStatus" class="status"></div>
+        </div>
+        <div class="card">
+          <h3>Submit PIREP</h3>
+          <form id="pirepForm">
+            <label>
+              <span>Flight number</span>
+              <input type="text" id="flightNumber" placeholder="KL1234" required />
+            </label>
+            <label>
+              <span>From / To</span>
+              <div class="inline">
+                <input type="text" id="dep" placeholder="EHAM" maxlength="4" required />
+                <input type="text" id="arr" placeholder="EBBR" maxlength="4" required />
+              </div>
+            </label>
+            <label>
+              <span>Aircraft</span>
+              <select id="aircraft" required></select>
+            </label>
+            <label>
+              <span>Flight time</span>
+              <input type="text" id="flightTime" placeholder="01:20" required />
+            </label>
+            <label>
+              <span>Notes / link</span>
+              <input type="url" id="notes" placeholder="Screenshot or stream URL (optional)" />
+            </label>
+            <button type="submit" class="btn btn-secondary">Send PIREP</button>
+          </form>
+          <div id="pirepStatus" class="status"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" class="section join">
+    <div class="container">
+      <h2>Join KLM Virtual</h2>
+      <p>Ready to fly? We welcome new pilots, trainers, dispatchers, and event hosts.</p>
+      <div class="grid two">
+        <div class="card">
+          <h3>Pilot application</h3>
+          <form id="applyForm">
+            <label>
+              <span>Name</span>
+              <input type="text" id="appName" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" id="appEmail" required />
+            </label>
+            <label>
+              <span>GeoFS username</span>
+              <input type="text" id="appUser" required />
+            </label>
+            <label>
+              <span>Experience</span>
+              <select id="appExp" required>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </label>
+            <label>
+              <span>Why KLM VA?</span>
+              <textarea id="appWhy" rows="4" placeholder="Tell us what you’re excited to fly."></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Submit application</button>
+          </form>
+          <div id="applyStatus" class="status"></div>
+        </div>
+        <div class="card info">
+          <h3>What we look for</h3>
+          <ul class="bullets">
+            <li><strong>Attitude:</strong> Respectful, safe, and curious</li>
+            <li><strong>Commitment:</strong> 1–2 flights per month encouraged</li>
+            <li><strong>Teamwork:</strong> Communicate on Discord, ask questions</li>
+            <li><strong>Growth:</strong> We train all skill levels</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Unofficial fan project for GeoFS. Not affiliated with KLM Royal Dutch Airlines.</p>
+      <p>© KLM Virtual — GeoFS Community</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20EnQ9HqvG1zVjX+M1Q6rJwIJwG8L196G2G2Q6XkM3Y="
+    crossorigin=""
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>
